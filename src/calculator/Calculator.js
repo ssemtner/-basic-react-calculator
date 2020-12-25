@@ -1,34 +1,17 @@
 import {
-    AppBar,
     Box,
     FormControl,
     FormControlLabel,
     FormLabel,
     Grid,
-    Icon,
     Paper,
     Radio,
     RadioGroup,
     TextField,
-    Toolbar,
     Typography
 } from "@material-ui/core";
-import DialpadIcon from "@material-ui/icons/Dialpad";
 import React from "react";
 import useStyles from "../Styles";
-
-const Header = () => (
-    <AppBar position={"static"}>
-        <Toolbar>
-            <Icon edge={"start"} color={"inherit"} aria-label="Home">
-                <DialpadIcon/>
-            </Icon>
-            <Box ml={3}>
-                <Typography variant={"h6"}>Simple React Calculator</Typography>
-            </Box>
-        </Toolbar>
-    </AppBar>
-)
 
 const Result = (props) => {
     const classes = useStyles()
@@ -128,7 +111,6 @@ const Calculator = () => {
 
     return (
         <main>
-            <Header/>
             <Form handler={handleChange} operationValue={values.operation}/>
             <Result result={result}/>
         </main>
